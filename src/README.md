@@ -10,3 +10,7 @@ $ lunatic target/wasm32-wasi/release/example-lunatic-submillisecond.wasm
 $ curl 0.0.0.0:3000
 ```
 
+```zsh
+$ PREFIX="0.0.0.0:3000"
+$ curl ${PREFIX}/parent/child
+```
