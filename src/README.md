@@ -13,4 +13,5 @@ $ curl 0.0.0.0:3000
 ```zsh
 $ PREFIX="0.0.0.0:3000"
 $ curl ${PREFIX}/parent/child
+$ curl ${PREFIX}/hoge-hoge # expect not to find endpoint
 ```
