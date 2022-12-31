@@ -1,11 +1,26 @@
-use submillisecond::{extract::path::Path, router, Application};
+use submillisecond::{extract::Path, router, Application, NamedParam};
 
 fn index() -> &'static str {
     "Hello :D"
 }
 
-fn greet(Path((first, last, age)): Path<(String, String, u32)>) -> String {
-    format!("welcome {first} {last}. You are {age} years old.")
+fn greet(
+    // Path((users, first, last, age)): Path<(String, String, String, u32)>, // Path(params): Path<std::collections::HashMap<String, String>>,
+    Path((first)): Path<(String)>, // Path(params): Path<std::collections::HashMap<String, String>>,
+) -> String {
+    // format!("Welcome {first} {last}. You are {age} years old.");
+    format!("Welcome {first}. You are years old.")
+    // "test"
+}
+
+#[derive(NamedParam)]
+struct Params {
+    name: String,
+    age: i32,
+}
+
+fn user_name_age(Params { name, age }: Params) -> String {
+    format!("Hello {name}, You are {age} years old.")
 }
 
 fn parent_child() -> &'static str {
@@ -18,11 +33,16 @@ fn not_found() -> &'static str {
 
 fn main() -> std::io::Result<()> {
     Application::new(router! {
+        // With args
+        // GET "/:users/:first/:last/:age" => greet
+        GET "/users/:first" => greet
+
         // Standard
         GET "/" => index
 
-        // With args
-        GET "/users/:first/:last/:age" => greet
+        // Named Params
+        GET "/user/:name/:age" => user_name_age
+        // Get "/user/:name/:age" => user_name_age
 
         // Nested
         "/parent" => {

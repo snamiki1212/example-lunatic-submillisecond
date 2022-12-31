@@ -3,8 +3,8 @@
 ```zsh
 $ cargo install lunatic-runtime
 $ rustup target add wasm32-wasi
-$ cargo build --release --target=wasm32-wasi
-$ lunatic target/wasm32-wasi/release/example-lunatic-submillisecond.wasm
+$ cargo build --release --target=wasm32-wasi && \
+  RUST_LOG=lunatic=debug WASMTIME_BACKTRACE_DETAILS=1 lunatic target/wasm32-wasi/release/example-lunatic-submillisecond.wasm
 
 # open new terminal
 $ curl 0.0.0.0:3000
@@ -14,4 +14,5 @@ $ curl 0.0.0.0:3000
 $ PREFIX="0.0.0.0:3000"
 $ curl ${PREFIX}/parent/child
 $ curl ${PREFIX}/hoge-hoge # expect not to find endpoint
+$ curl ${PREFIX}/user/hoge-san/99
 ```
