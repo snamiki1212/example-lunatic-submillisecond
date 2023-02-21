@@ -13,4 +13,4 @@ runner = "lunatic"
 
 [dependencies]
 serde = { version = "1.0.152", features = ["derive"] }
-submillisecond = "0.2.0-alpha0"
+submillisecond = "0.3.0"

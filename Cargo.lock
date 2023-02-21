@@ -593,9 +593,9 @@ dependencies = [
 
 [[package]]
 name = "submillisecond"
-version = "0.2.2"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "336430a7b3a2de9dc2c00649830aa30601a322de3122a53ff4a8ce517e377c9e"
+checksum = "049f23a18319d7f2fd00a61a81b349324edb2d0678c36efc5289dcf1c121431b"
 dependencies = [
  "ansi_term",
  "headers",
@@ -613,9 +613,9 @@ dependencies = [
 
 [[package]]
 name = "submillisecond_macros"
-version = "0.2.2"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "06c24c8d3642810651289d52c3e2bfccc7db4964590c07a3f7de81c58a10e4b9"
+checksum = "16f2ab3d83196b73751d1c8340dba2c6dc0b7ce1e3538fa9401f891756465a9f"
 dependencies = [
  "better-bae",
  "lazy_static",
