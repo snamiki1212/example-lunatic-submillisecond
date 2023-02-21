@@ -16,3 +16,7 @@ $ curl ${PREFIX}/parent/child
 $ curl ${PREFIX}/hoge-hoge # expect to find no endpoint
 $ curl ${PREFIX}/user/hoge-san/99
 ```
+
+## LICENSE
+
+MIT
